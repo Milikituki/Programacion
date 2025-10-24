@@ -76,5 +76,24 @@ public class Operadores {
         System.out.println("El resultado de tu evaluación es: "+requisitos);
         scanner.close(); //buena práctica
     }
+    public void cambiosTipo(){
+        int letraASCII = 75;
+        System.out.println((char)letraASCII);
+        char letra1 = 'w';
+        System.out.println((int)letra1);
+
+        //String palabra = "hola";
+        //System.out.println(Integer.parseInt(palabra));
+        //da fallo, pero si hubiese un número "7", sí funcionaría, porque entiende que es un número
+
+        //String palabra = "false";
+        //System.out.println(Boolean.parseBoolean(palabra));
+        // aquí si pones algo que no sea "true" te sale false, porque no lo puede cambiar
+
+        int numero = 123;
+        System.out.println(String.valueOf(123)+1);
+        char letra2 = 'a';
+        System.out.println(String.valueOf(letra2));
+    }
 
 }
