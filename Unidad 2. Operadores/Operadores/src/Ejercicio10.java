@@ -28,6 +28,7 @@ public class Ejercicio10 {
                 """,
                 horas, horasExtra, extras, extras,
                 doble, salarioBase, pagaExtra, total);
+        s.close();
 
 
     }
