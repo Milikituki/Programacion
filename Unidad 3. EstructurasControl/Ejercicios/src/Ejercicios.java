@@ -360,26 +360,31 @@ public class Ejercicios {
         double pesoExtra = 2.00;
         double pesoBase= 5.00;
         double distanciaBase = 100.00;
-        double totalPesoExtra = 0;
+        //double totalPesoExtra = 0;
         double diferenciaPeso =0;
         double precioPesoExtra = 0;
-        double precioUrgente = 0;
+        //double precioUrgente = 0;
         double precioDistanciaExtra = 0;
 
 
         if (peso > pesoBase){
             diferenciaPeso = peso-pesoBase;
             precioPesoExtra = pesoExtra*diferenciaPeso;
-            totalPesoExtra = precioBase+precioPesoExtra;
+            //totalPesoExtra = precioBase+precioPesoExtra;
         }
-        if (distancia != distanciaBase){
+        if (distancia > distanciaBase){
             precioDistanciaExtra = 10;
         }
-        double subtotal = totalPesoExtra+precioDistanciaExtra;
+        double subtotal = precioBase+precioPesoExtra+precioDistanciaExtra;
+        double precioUrgente;
+
         if (urgente){
             precioUrgente = subtotal*1.5;
+        } else {
+            precioUrgente = subtotal;
         }
         double recargoUrgente = precioUrgente-subtotal;
+
         System.out.printf("""
                 Precio base: %.1f€
                 Peso: %.1fkg (excede %.0fkg en %.1fkg)
