@@ -208,7 +208,7 @@ public class Ejercicios {
         int minLong = 8;
         boolean caracteres = longitud>=minLong;
 
-        boolean numerico = pswd.matches(".*\\d.*");
+        boolean numerico = pswd.matches(".*\\d.*"); //Con .contains() con cada número también se puede
         boolean prohibida = pswd.equals("12345678") || pswd.equals("password");
         boolean requisitos = numerico && prohibida && caracteres;
 
@@ -249,7 +249,7 @@ public class Ejercicios {
         boolean joven = edad>=12 && edad<=17;
         boolean normal = edad>=18 && edad<=64;
         boolean mayor = edad>=65;
-        String diaSemana = null;
+        String diaSemana = "";
         boolean esMartes = dia == 2;
         boolean esJueves = dia == 4;
 
