@@ -14,7 +14,20 @@ public class Main {
 //        ejercicios.e12();
 //        ejercicios.e13();
 //        ejercicios.e14();
-        ejercicios.e15();
+//        ejercicios.e15();
+        EjerciciosSWITCH_FOR ejerciciosSWITCHFor = new EjerciciosSWITCH_FOR();
+
+//        ejerciciosSWITCHFor.e1();
+//        ejerciciosSWITCHFor.e2();
+//        ejerciciosSWITCHFor.e3();
+//        ejerciciosSWITCHFor.e4();
+//        ejerciciosSWITCHFor.e5();
+//        ejerciciosSWITCHFor.e6();
+//        ejerciciosSWITCHFor.e7();
+//        ejerciciosSWITCHFor.e8();
+//        ejerciciosSWITCHFor.e9();
+        ejerciciosSWITCHFor.e10();
+
 
 
     }

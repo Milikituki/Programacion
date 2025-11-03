@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ejercicios {
+public class EjerciciosIF {
 
     public void ejercicio1(){
 
