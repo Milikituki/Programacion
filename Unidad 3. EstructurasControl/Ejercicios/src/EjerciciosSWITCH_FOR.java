@@ -2,8 +2,8 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 public class EjerciciosSWITCH_FOR {
-    Scanner scanner = new Scanner(System.in);
-    public void e1(){
+
+    public void e1(Scanner scanner){
 
         System.out.print("Introduce un número (1-7): ");
         int numero = scanner.nextInt();
@@ -36,7 +36,7 @@ public class EjerciciosSWITCH_FOR {
         }
         System.out.print("El día "+numero+" es: "+diaSemana);
     }
-    public void e2(){
+    public void e2(Scanner scanner){
         System.out.print("Introduce tu calificación (A-F): ");
         String calificacion = scanner.next().toUpperCase();
         String mensaje = null;
@@ -62,7 +62,7 @@ public class EjerciciosSWITCH_FOR {
         }
         System.out.print("Calificación "+calificacion+" : "+mensaje);
     }
-    public void e3(){
+    public void e3(Scanner scanner){
         System.out.print("Introduce el primer número: ");
         int num1 = scanner.nextInt();
         System.out.print("Introduce la operación (+, -, *, /, %): ");
@@ -96,7 +96,7 @@ public class EjerciciosSWITCH_FOR {
         }
 
     }
-    public void e4(){
+    public void e4(Scanner scanner){
         System.out.println("-----Menú-----");
         System.out.println("1.- Ver perfil");
         System.out.println("2.- Configuración");
@@ -122,7 +122,7 @@ public class EjerciciosSWITCH_FOR {
             }
         }
     }
-    public void e5(){
+    public void e5(Scanner scanner){
         System.out.print("Introduce el número del mes (1-12): ");
         int mes = scanner.nextInt();
         String estacion = null;
@@ -144,7 +144,7 @@ public class EjerciciosSWITCH_FOR {
         }
         System.out.printf("El mes %d corresponde a: %s", mes, estacion);
     }
-    public void e6(){
+    public void e6(Scanner scanner){
         System.out.print("Introduce un número: ");
         int num = scanner.nextInt();
         System.out.println("Tabla del "+num+":");
@@ -154,7 +154,7 @@ public class EjerciciosSWITCH_FOR {
 
         }
     }
-    public void e7(){
+    public void e7(Scanner scanner){
         System.out.printf("Introduce un número: ");
         int num = scanner.nextInt();
         int i = 0;
@@ -170,7 +170,7 @@ public class EjerciciosSWITCH_FOR {
         }
         System.out.printf("%nSuma de los números del 1 al %d es: %d", num, total);
     }
-    public void e8(){
+    public void e8(Scanner scanner){
         System.out.printf("Introduce un número: ");
         int numero = scanner.nextInt();
         System.out.printf("Recorriendo números del 1 al %d...", numero);
@@ -188,7 +188,7 @@ public class EjerciciosSWITCH_FOR {
                 Números impares encontrados: %d
                 """, pares, impares);
     }
-    public void e9(){
+    public void e9(Scanner scanner){
         System.out.printf("Introduce un número: ");
         int numero = scanner.nextInt();
         System.out.printf("Calculado %d! %n", numero);
@@ -209,7 +209,7 @@ public class EjerciciosSWITCH_FOR {
         }
         System.out.printf("%nEl factorial de %d es: %d", numero,factorial);
     }
-    public void e10(){
+    public void e10(Scanner scanner){
         System.out.printf("""
                 
                 --- EJERCICIOS ---
@@ -241,5 +241,6 @@ public class EjerciciosSWITCH_FOR {
             }
         }
     }
+
 
 }
