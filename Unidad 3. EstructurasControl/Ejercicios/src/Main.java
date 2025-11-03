@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Ejercicios ejercicios = new Ejercicios();
+        EjerciciosIF ejercicios = new EjerciciosIF();
 //        ejercicios.ejercicio1();
 //        ejercicios.e2();
 //        ejercicios.e3();
