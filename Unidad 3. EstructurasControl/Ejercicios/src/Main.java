@@ -24,12 +24,12 @@ public class Main {
 //        ejerciciosSWITCHFor.e2(scanner);
 //        ejerciciosSWITCHFor.e3(scanner);
 //        ejerciciosSWITCHFor.e4(scanner);
-//        ejerciciosSWITCHFor.e5(scanner);
+        ejerciciosSWITCHFor.e5(scanner);
 //        ejerciciosSWITCHFor.e6(scanner);
 //        ejerciciosSWITCHFor.e7(scanner);
 //        ejerciciosSWITCHFor.e8(scanner);
 //        ejerciciosSWITCHFor.e9(scanner);
-        ejerciciosSWITCHFor.e10(scanner);
+//        ejerciciosSWITCHFor.e10(scanner);
 //        scanner.close();
 
 
