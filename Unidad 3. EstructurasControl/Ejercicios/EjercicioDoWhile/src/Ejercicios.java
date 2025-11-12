@@ -169,7 +169,8 @@ public class Ejercicios {
 
 
         } while (repeticion<numeroEstudiantes);
-        for (int i = 1; i < repeticion; i++) {
+
+        for (int i = 0; i < numeroEstudiantes; i++) {
             switch (notaEstudiante){
                 case 10, 9->{
                     calificacion = "A";
@@ -183,11 +184,12 @@ public class Ejercicios {
                     calificacion = "F";
                 }
             }
+            System.out.printf("""
+                        Estudiante %d: %d puntos = Calificación %s
+                        """, i, notaEstudiante, calificacion);
 
         }
-        System.out.printf("""
-                        Estudiante %d: %d puntos = Calificación %s
-                        """, repeticion, notaEstudiante, calificacion);
+
 
     }
 }
