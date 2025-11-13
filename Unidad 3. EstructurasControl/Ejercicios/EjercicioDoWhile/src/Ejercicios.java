@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Ejercicios {
@@ -154,39 +156,30 @@ public class Ejercicios {
     }
     public void e9(){
 /*        Crea un programa que pida al usuario cuántos estudiantes hay en una clase. Para cada estudiante, usa un bucle while para pedir su calificación numérica (0-10). Luego, usa un bucle for para mostrar todas las calificaciones y usa un switch para convertir cada nota numérica en letra: 9-10=A, 7-8=B, 5-6=C, 3-4=D, 0-2=F.*/
-
-        int numeroEstudiantes = 0;
-
+        List<Integer> notas = new ArrayList<>();
         System.out.printf("¿Cuántos estudiantes hay? ");
-        numeroEstudiantes = scanner.nextInt();
+        int numeroEstudiantes = scanner.nextInt();
         int notaEstudiante = 0;
         int repeticion = 0;
         String calificacion = "";
         do {
             System.out.printf("Introduce la nota del estudiante: ");
             notaEstudiante = scanner.nextInt();
+            notas.add(notaEstudiante);
             repeticion++;
-
-
         } while (repeticion<numeroEstudiantes);
-
-        for (int i = 0; i < numeroEstudiantes; i++) {
-            switch (notaEstudiante){
-                case 10, 9->{
-                    calificacion = "A";
-                } case 8, 7->{
-                    calificacion = "B";
-                } case 6, 5->{
-                    calificacion = "C";
-                } case 4, 3->{
-                    calificacion = "D";
-                } case 2, 0->{
-                    calificacion = "F";
-                }
+        for (int i = 0; i < notas.size(); i++) {
+            int nota = notas.get(i);
+            switch (nota){
+                case 10, 9->{calificacion = "A";}
+                case 8, 7->{calificacion = "B";}
+                case 6, 5->{calificacion = "C";}
+                case 4, 3->{calificacion = "D";}
+                case 2, 0->{calificacion = "F";}
             }
             System.out.printf("""
                         Estudiante %d: %d puntos = Calificación %s
-                        """, i, notaEstudiante, calificacion);
+                        """, i, nota, calificacion);
 
         }
 
