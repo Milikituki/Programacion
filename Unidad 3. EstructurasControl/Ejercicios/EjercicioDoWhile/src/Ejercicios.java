@@ -154,35 +154,96 @@ public class Ejercicios {
         }while (edad < 0 || edad > 120);
 
     }
-    public void e9(){
+    public void e9ArrayList(){
 /*        Crea un programa que pida al usuario cuántos estudiantes hay en una clase. Para cada estudiante, usa un bucle while para pedir su calificación numérica (0-10). Luego, usa un bucle for para mostrar todas las calificaciones y usa un switch para convertir cada nota numérica en letra: 9-10=A, 7-8=B, 5-6=C, 3-4=D, 0-2=F.*/
+        // declaramos el ArrayList (objeto) como notas
         List<Integer> notas = new ArrayList<>();
         System.out.printf("¿Cuántos estudiantes hay? ");
+        //guardamos el numero de estudiantes
         int numeroEstudiantes = scanner.nextInt();
+        //inicializamos la nota de cada estudiante
         int notaEstudiante = 0;
+        //inicializamos la repetición del bucle
         int repeticion = 0;
+        //inicializamos la calificación
         String calificacion = "";
+        //Haz el código mientras que...
         do {
             System.out.printf("Introduce la nota del estudiante: ");
+            //guardamos la nota de los estudiantes que ingresen por consola
             notaEstudiante = scanner.nextInt();
+            //añadimos al arrayList la notaEstudiante que nos dan
             notas.add(notaEstudiante);
+            //cada vez que se repite el bucle, sumamos 1 repetición
             repeticion++;
+            //mientras que la repetición sea menor que el número de estudiantes
         } while (repeticion<numeroEstudiantes);
+        //como no sabemos la largura del arrayList, usamos .size y la determina
+        //así recorremos cada nota
         for (int i = 0; i < notas.size(); i++) {
+            //guardamos en "nota" individual cada nota del arrayList que obtenemos en cada posición (get(i))
             int nota = notas.get(i);
+            //Según la nota, habrá una calificación u otra
             switch (nota){
-                case 10, 9->{calificacion = "A";}
-                case 8, 7->{calificacion = "B";}
-                case 6, 5->{calificacion = "C";}
-                case 4, 3->{calificacion = "D";}
-                case 2, 0->{calificacion = "F";}
+                case 10, 9->calificacion = "A";
+                case 8, 7->calificacion = "B";
+                case 6, 5->calificacion = "C";
+                case 4, 3->calificacion = "D";
+                case 2, 1, 0->calificacion = "F";
+                default -> calificacion = "Error";
+
             }
+            //Imprimimos la posición del estudiante +1, la nota individual y la calificación que le toca
             System.out.printf("""
                         Estudiante %d: %d puntos = Calificación %s
-                        """, i, nota, calificacion);
+                        """, i+1, nota, calificacion);
 
         }
 
+
+    }
+    public void e9Array(){
+        System.out.printf("¿Cuántos estudiantes hay? ");
+        //Leemos el tamaño del array
+        int numeroEstudiantes = scanner.nextInt();
+        // Declaramos el array con el tamaño que se establece en "numeroEstudiantes"
+        int[] notas = new int[numeroEstudiantes];
+        //número de veces que se van a pedir las notas
+        int repeticion = 0;
+        // Mientras que la repetición sea menor que el número de estudiantes, se ejecutará el código
+        while (repeticion < numeroEstudiantes){
+            //pedimos la nota del estudiante y la guardamos en "notaEstudiante"
+            System.out.printf("Introduce la nota del estudiante: ");
+            int notaEstudiante = scanner.nextInt();
+            // guardas la notaEstudiante en el array con la posición dada por repetición
+            // nota del primer estudiante se guarda en la posición 0, nota del segundo se guarda en la 1...
+            notas[repeticion] = notaEstudiante;
+            //el número de repetición se incrementa en 1 en cada bucle
+            repeticion++;
+        }
+        System.out.printf("%n------ REPORTE DE CALIFICACIONES ------%n");
+        //recorremos el array y la longitud se determina con length
+        for (int i = 0; i < notas.length; i++) {
+            // declaramos variable donde vamos a guardar cada nota individualmente
+            // teniendo en cuenta cada nota "notas" y su posición [i]
+            int nota = notas[i];
+            String calificacion;
+            // la calificación será dependiendo de cada nota individual, un caso u otro
+            calificacion = switch (nota){
+                case 10, 9 -> "A";
+                case 8, 7 -> "B";
+                case 6, 5 -> "C";
+                case 4, 3 -> "D";
+                case 2, 1, 0 -> "F";
+                default -> "Error"; // siempre tiene que haber un default
+            };
+            //imprimimos la posición del estudiante + 1 (siempre empieza en 0)
+            // la nota individual de cada estudiante y la calificación que le tocaría
+            System.out.printf("Estudiante %d: %d puntos = Calificación %s%n",
+                    i +1, nota, calificacion);
+        }
+    }
+    public void e10(){
 
     }
 }
