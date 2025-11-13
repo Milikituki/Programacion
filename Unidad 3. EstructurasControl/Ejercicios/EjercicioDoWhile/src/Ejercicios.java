@@ -243,7 +243,85 @@ public class Ejercicios {
                     i +1, nota, calificacion);
         }
     }
-    public void e10(){
+    public void e10() {
+        /*        Desarrolla un programa que simule un cajero automático. El saldo inicial es 1000€. Usa un bucle do-while para mostrar un menú con opciones: 1=Consultar saldo, 2=Retirar dinero, 3=Depositar dinero, 4=Salir. Usa switch para cada opción. Para retirar dinero, usa un bucle while para validar que no se retire más del saldo disponible (si intenta retirar más, debe volver a pedir la cantidad). Para depositar, valida que sea una cantidad positiva.*/
+        /*Saldo inicial = 1000;
+        menu con opciones:
+        1. Consultar saldo
+        2. Retirar dinero
+            bucle while para q no retire más de lo q tiene, sino vuelve a pedir cantidad a retirar
+        3. Depositar dinero
+            validar que la cantidad es positiva
+         */
+
+        int opcion;
+        double saldo = 1000.00;
+        do {
+            System.out.printf("""
+                    
+                    ---- CAJERO AUTOMÁTICO ----
+                    Saldo actual: %.2f€
+                    
+                    1. Consultar saldo
+                    2. Retirar dinero
+                    3. Depositar dinero
+                    4. Salir
+                    """, saldo);
+            System.out.printf("Elige una opción: ");
+            opcion = scanner.nextInt();
+
+                switch (opcion) {
+                    case 1 -> {
+                        System.out.printf("Tu saldo actual es %.2f€%n", saldo);
+                    }
+                    case 2 -> {
+                        double sacarDinero = 0;
+                        do {
+                            System.out.printf("¿Cuánto deseas retirar? ");
+                            sacarDinero = scanner.nextDouble();
+
+                            if (sacarDinero > saldo){
+                                System.out.printf("""
+                                    %nFondos insuficientes. Tu saldo es: %.2f€""", saldo);
+                            }
+
+                        }while (sacarDinero>saldo);
+
+                        saldo -= sacarDinero;
+                        System.out.printf("""
+                                Retiro exitoso. Has retirado %.2f€
+                                Nuevo saldo: %.2f
+                                """, sacarDinero, saldo);
+                    }
+                    case 3 -> {
+                        double deposito = 0;
+                        do {
+                            System.out.printf("¿Cuánto deseas depositar? ");
+                            deposito = scanner.nextDouble();
+
+                            if (deposito < 0){
+                                System.out.printf("""
+                                    %nDebes introducir una cantidad positiva""");
+                            }
+
+                        }while (deposito<0);
+
+                        saldo += deposito;
+                        System.out.printf("""
+                                Deposito exitoso. Has depositado %.2f€
+                                Nuevo saldo: %.2f
+                                """, deposito, saldo);
+
+                    }
+                    case 4 -> {
+                        System.out.printf("%nGracias por usar el cajero, ¡hasta luego!");
+                    }
+                    default -> {
+                        System.out.printf("Opción inválida. Introduce una opción: ");
+                    }
+                }
+
+        } while (opcion != 4);
 
     }
 }
