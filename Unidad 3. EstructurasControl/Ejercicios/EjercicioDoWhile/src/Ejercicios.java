@@ -324,4 +324,59 @@ public class Ejercicios {
         } while (opcion != 4);
 
     }
+    public void e1RE(int numeroElegido){
+
+        /*1. Crea un programa de adivinación de números El programa genera de manera aleatoria un número entre 1 y 50. El usuario debe adivinar el número en un máximo de 7 intentos. Después de cada intento, indica si el número es mayor o menor que el elegido. Si el usuario acierta, mostrar un aviso con el número de intentos utilizado; si no, mostrar un aviso de que debe introducir nuevamente un número.*/
+
+        int numeroUsuario;
+        int repeticion = 0;
+        int requisitoRepeticion = 7;
+        int requisitoMinimo = 1;
+        int requisitoMaximo = 50;
+
+        System.out.printf("Adivina el número que estoy pensando ente el 1 y el 50, tienes %d intentos.%n", requisitoRepeticion);
+        System.out.printf("Di un número: ");
+        numeroUsuario = scanner.nextInt();
+        do {
+            repeticion++;
+            if (numeroElegido != numeroUsuario && repeticion ==requisitoRepeticion){
+                System.out.printf("¡Lástima, has agotado los %d intentos! El número era: %d", requisitoRepeticion, numeroElegido);
+                break;
+            } else if (numeroElegido != numeroUsuario){
+
+                if (repeticion != (requisitoRepeticion-1)){
+                    System.out.printf("Intento %d: ", repeticion);
+                } else if (repeticion == (requisitoRepeticion-1)){
+                    System.out.printf("Último intento: ");
+                }
+                if (numeroUsuario>numeroElegido){
+                    System.out.printf("El número es más pequeño... ");
+                } else if (numeroUsuario<numeroElegido){
+                    System.out.printf("El número es más grande... ");
+                }
+                System.out.printf("Prueba otra vez: ");
+                numeroUsuario = scanner.nextInt();
+            } else if (numeroElegido == numeroUsuario){
+                System.out.printf("¡Enhorabuena, el número era %d y lo has logrado en %d intentos!", numeroElegido,repeticion);
+                break;
+            }
+
+
+        } while (repeticion<=requisitoRepeticion || numeroUsuario == numeroElegido && numeroUsuario <= requisitoMaximo && numeroUsuario >= requisitoMinimo);
+        /*while (repeticion < 7 || numeroUsuario == numeroElegido && numeroUsuario <= 50 && numeroUsuario >= 1){
+            repeticion++;
+            if (numeroUsuario!=numeroElegido){
+                System.out.printf("Has fallado, ¡prueba otra vez! Vuelve a decir un número: ");
+                numeroUsuario = scanner.nextInt();
+            }  else if (numeroUsuario!=numeroElegido && repeticion == 7) {
+                System.out.printf("%n¡Lástima, has agotado todos los intentos! El número era: %d", numeroElegido);
+            } else if (numeroUsuario == numeroElegido){
+                System.out.printf("¡Enhorabuena, el número era %d y lo has logrado en %d intentos!", numeroElegido,repeticion);
+                break;
+            }
+        }*/
+    }
+    public void e2RE(String palabraElegida){
+
+    }
 }

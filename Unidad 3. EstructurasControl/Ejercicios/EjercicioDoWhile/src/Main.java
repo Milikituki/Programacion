@@ -13,7 +13,7 @@ public class Main {
 //        e.e5();
 //        e.e6();
 //        e.e7();
-        e.e10();
+        e.e1RE(70);
     }
 
 
