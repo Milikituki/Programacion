@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Bonoloto {
@@ -7,8 +8,7 @@ public class Bonoloto {
 
     public void verNumerosSistema() {
 
-            System.out.printf("Los números generados son: %d, %d, %d, %d, %d%n",
-                    numerosSistema[0], numerosSistema[1], numerosSistema[2], numerosSistema[3], numerosSistema[4]);
+        System.out.printf("Los números generados son: %s%n", Arrays.toString(numerosSistema));
 
     }
     public void generarNumerosSistema2() {
@@ -18,17 +18,16 @@ public class Bonoloto {
         do {
            temporal = (int) (Math.random() * 20) + 1;
            boolean repetido = false;
-            for (int i = 0; i < numerosSistema.length; i++) {
-                if (temporal == numerosSistema[i]){
+            for (int i : numerosSistema) {
+                if (temporal == i) {
                     repetido = true;
                     break;
                 }
             }
             if (!repetido){
                 numerosSistema[contador] = temporal;
-                contador++; // cuantas veces has metido un numero valido, cuando llega a 5 para
+                contador++; // cuantas veces has metido un número válido, cuando llega a 5 para
             }
-
         }while(contador<5);
 
     }
@@ -36,7 +35,7 @@ public class Bonoloto {
         for (int i = 0; i < numerosUsuario.length; i++) {
             int numero;
             do {
-                System.out.printf("Introduce un valor: ");
+                System.out.print("Introduce un valor: ");
                 numero = scanner.nextInt();
                 if (numero<1 || numero>20){
                     System.out.println("Este numero no es válido");
@@ -47,16 +46,28 @@ public class Bonoloto {
     }
     public void comprobarAciertos(){
         int aciertos = 0;
-        for (int i = 0; i < numerosSistema.length; i++) {
-            for (int j = 0; j < numerosUsuario.length; j++) {
-                if (numerosSistema[i] == numerosUsuario[j]){
+        for (int i : numerosSistema) {
+            for (int j : numerosUsuario) {
+                if (i == j) {
                     aciertos++;
                     break;
                 }
             }
         }
-        System.out.println("El número de aciertos es: "+aciertos);
+
+        System.out.printf("El número de aciertos es: %d%n", aciertos);
+        String premio = switch (aciertos){
+            case 1,2 -> "10";
+            case 3 -> "1.000";
+            case 4 -> "10.000";
+            case 5 -> "1.000.000";
+            default -> null;
+        };
+        if (premio == null){
+            System.out.print("Suerte la próxima vez");
+        } else {
+            System.out.printf("Premio: %s€", premio);
+        }
 
     }
-
 }
