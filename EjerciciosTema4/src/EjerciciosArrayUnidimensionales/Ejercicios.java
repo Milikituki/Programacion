@@ -148,6 +148,7 @@ public class Ejercicios {
 
     }
     public void ejercicio9(int[] numeros){
+       /* Escribe un programa que cree un array de 7 números. Usa un bucle for para crear un nuevo array con los elementos en orden inverso. Muestra ambos arrays: el original y el invertido.*/
         int opuesto = 0;
         int numeroIndividual = 0;
         for (int i = 0; i < numeros.length/2; i++) {
@@ -156,15 +157,47 @@ public class Ejercicios {
             numeros[i] = numeros[opuesto]; // aquí le indico que en la posición i vamos a meter la opuesta que hemos "calculado" en la variable "opuesto"
             numeros[opuesto] = numeroIndividual; // en la posición opuesta vamos a guardar el "original"
         }
-        System.out.print("Array invertido: [");
-        for (int numero : numeros) {
-            System.out.printf("%d, ",numero);
-        }
-        System.out.print("]");
+        System.out.print("Array invertido: "+Arrays.toString(numeros));
 
     }
     public void ejercicio10(){
-
+        System.out.print("¿Cuántos estudiantes hay en tu clase? ");
+        int numeroEstudiantes = scanner.nextInt();
+        double[] calificaciones = new double[numeroEstudiantes];
+        for (int i = 0; i < calificaciones.length; i++) {
+            System.out.printf("Introduce la nota del estudiante %d: ",i+1);
+            double notaIndividual = scanner.nextDouble();
+            calificaciones[i] = notaIndividual;
+        }
+        System.out.printf("--- REPORTE DE CALIFICACIONES ---%n");
+        System.out.printf("Calificaciones: %s%n", Arrays.toString(calificaciones));
+        double promedio = 0.0;
+        double suma = 0;
+        for (int i = 0; i < calificaciones.length; i++) {
+            suma += calificaciones[i];
+            promedio = suma/ calificaciones.length;
+        }
+        System.out.printf("Promedio de la clase: %.2f%n", promedio);
+        int aprobados = 0;
+        for (int i = 0; i < calificaciones.length; i++) {
+            if (calificaciones[i] >= 5){
+                aprobados++;
+            }
+        }
+        System.out.printf("Estudiantes aprobados: %d%n", aprobados);
+        double alta = calificaciones[0];
+        double baja = calificaciones[0];;
+        for (int i = 0; i < calificaciones.length; i++) {
+            if (alta < calificaciones[i]){
+                alta = calificaciones[i];
+            }
+        }
+        for (int i = 0; i < calificaciones.length; i++) {
+            if (baja > calificaciones[i]){
+                baja = calificaciones[i];
+            }
+        }
+        System.out.printf("Nota más alta: %.2f%nNota más baja: %.2f", alta, baja);
     }
 
 
