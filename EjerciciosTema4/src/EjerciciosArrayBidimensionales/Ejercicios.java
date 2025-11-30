@@ -92,13 +92,75 @@ public class Ejercicios {
                 {1,2,3,4},
                 {5,6,7,8},
                 {9,10,11,12}};
-        for (int i = 0; i < matriz[0].length; i++) {
+        for (int i = 0; i < 4; i++) { //4 es el numero de columnas que hay
             for (int j = 0; j < matriz.length; j++) {
 
                 System.out.printf("%d\t", matriz[j][i]);
             }
             System.out.println();
         }
+
+    }
+    public void e8(){
+        int[][] matriz = {
+                {12,15,8,23,24},
+                {17,20,9,14,27},
+                {6,11,18,25,30},
+                {13,22,7,16,19}};
+        int pares, impares;
+        pares = impares = 0;
+        for (int[] fila : matriz) {
+            for (int numero : fila) {
+                if (numero%2==0){
+                    pares++;
+                } else {
+                    impares++;
+                }
+            }
+        }
+        System.out.print("Números pares: "+pares+ "\n");
+        System.out.print("Números impares: "+impares);
+
+    }
+    public void e9(){
+        int[][] matriz = new int[10][10];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                matriz[i][j] = (i+1)*(j+1);
+                System.out.printf("%d\t", matriz[i][j]);
+            }
+            System.out.println();
+        }
+    }
+    public void e10(){
+        System.out.print("¿Cuántos estudiantes hay? ");
+        int estudiantes = scanner.nextInt();
+        System.out.print("¿Cuántas asignaturas hay? ");
+        int asignaturas = scanner.nextInt();
+        double [][] matriz = new double[estudiantes][asignaturas];
+        double[] sumaEstudiante = new double[estudiantes];
+        for (int i = 0; i < estudiantes; i++) {
+            double suma = 0.0;
+            for (int j = 0; j < asignaturas; j++) {
+                System.out.printf("Introduce la nota del estudiante %d, asignatura %d: ", i+1, j+1);
+                double nota = scanner.nextDouble();
+                matriz[i][j] = nota;
+                suma += nota;
+            }
+            sumaEstudiante[i] = suma;
+        }
+        System.out.println("---TABLA DE NOTAS ---");
+        for (int i = 0; i < estudiantes; i++) {
+            for (int j = 0; j < asignaturas; j++) {
+                System.out.printf("%5.1f\t", matriz[i][j]); // El 5 es el espacio entre cada número que se imprima, para que queden alineados uno debajo del otro
+            }
+            System.out.println();
+        }
+        System.out.println("--- PROMEDIOS POR ESTUDIANTES ---");
+        for (int i = 0; i < asignaturas; i++) {
+            System.out.printf("Estudiante %d: %.1f%n", i+1, sumaEstudiante[i]/asignaturas);
+        }
+
 
     }
 
