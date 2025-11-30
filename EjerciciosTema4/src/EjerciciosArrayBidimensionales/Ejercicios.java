@@ -73,14 +73,33 @@ public class Ejercicios {
         }
     }
     public void e6(){
-        int[][]matriz ={{15,23,8,19},{42,17,31,25},{28,35,12,40}};
-        for (int i = 0; i < matriz.length; i++) {
-            int mayor = 0;
-            for (int j = 0; j < matriz[i].length; j++) {
-                if ()
-
+        int[][]matriz ={
+                {15,23,8,19},
+                {42,17,31,25},
+                {28,35,12,40}};
+        for (int i = 0; i < matriz[0].length; i++) { //empezamos a recorrer desde la columna 0
+            int mayor = matriz[0][i]; //inicializamos la variable con el valor de la primera fila y la columna que toque
+            for (int j = 0; j < matriz.length; j++) { //recorremos las filas
+                if(matriz[j][i] > mayor){ //si el valor de la fila y columna que toquen es mayor que el valor de la primera fila, columna que toque...
+                    mayor = matriz[j][i]; // entonces la variable mayor se convertirá en ese valor.
+                }
             }
-            
+            System.out.printf("El número más grande de la columna %d es: %d\n", i, mayor); // aquí i es la columna
         }
     }
+    public void e7(){
+        int[][] matriz = {
+                {1,2,3,4},
+                {5,6,7,8},
+                {9,10,11,12}};
+        for (int i = 0; i < matriz[0].length; i++) {
+            for (int j = 0; j < matriz.length; j++) {
+
+                System.out.printf("%d\t", matriz[j][i]);
+            }
+            System.out.println();
+        }
+
+    }
+
 }
