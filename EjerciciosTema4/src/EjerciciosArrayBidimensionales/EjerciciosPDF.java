@@ -68,17 +68,15 @@ public class EjerciciosPDF {
             opcion = scanner.nextInt();
 
             switch (opcion){
-                case 1 -> imprimirArray(array);
+                case 1 -> System.out.printf(Arrays.toString(array));
                 case 2 -> moverIzquierda(array);
                 case 3 -> moverDerecha(array);
                 case 4 -> invertir(array);
+                case 5 -> System.out.print("Saliendo del programa...");
                 default -> System.out.print("Opción no permitida");
 
             }
         } while (opcion!=5);
-    }
-    private void imprimirArray(int[] arrayP){
-        System.out.printf(Arrays.toString(arrayP));
     }
     private void moverIzquierda(int[] arrayP){
         int posicion = arrayP[0];
@@ -97,10 +95,11 @@ public class EjerciciosPDF {
         System.out.printf(Arrays.toString(arrayP));
     }
     private void invertir(int[] arrayP){
-        int silla = 0;
+
         for (int i = 0; i < arrayP.length/2; i++) {
-            silla = arrayP[i];
-            
+           int silla = arrayP[i];
+            arrayP[i] = arrayP[arrayP.length-i-1];
+            arrayP[arrayP.length-i-1] = silla;
         }
         System.out.printf(Arrays.toString(arrayP));
     }
