@@ -157,11 +157,24 @@ public class Ejercicios {
             System.out.println();
         }
         System.out.println("--- PROMEDIOS POR ESTUDIANTES ---");
-        for (int i = 0; i < asignaturas; i++) {
-            System.out.printf("Estudiante %d: %.1f%n", i+1, sumaEstudiante[i]/asignaturas);
+        for (int i = 0; i < estudiantes; i++) {
+            double suma = sumaEstudiante[i];
+            System.out.printf("Estudiante %d: %.1f%n", i+1, suma/asignaturas);
         }
-
-
+        System.out.println("--- NOTA MÁS ALTA ---");
+        double mayor = 0.0;
+        int estudiante = 0;
+        int asignatura = 0;
+        for (int i = 0; i < estudiantes; i++) {
+            for (int j = 0; j < asignaturas; j++) {
+                if (matriz[i][j] > mayor){
+                    mayor = matriz[i][j];
+                    estudiante = i+1;
+                    asignatura = j+1;
+                }
+            }
+        }
+        System.out.printf("La nota más alta es: %.1f (estudiante %d, asignatura %d).", mayor, estudiante, asignatura);
     }
 
 }
