@@ -103,4 +103,48 @@ public class EjerciciosPDF {
         }
         System.out.printf(Arrays.toString(arrayP));
     }
+    public void e3(){
+        // DECLARACION ARRAY CON CONDICION
+        double[][] notas = new double[2][2];
+        for (int i = 0; i < notas.length; i++) {
+            for (int j = 0; j < notas[i].length; j++) {
+                double notaEstudiante;
+                do {
+                    System.out.printf("Introduce la nota %d del estudiante %d: ", j+1, i+1);
+                    notaEstudiante = scanner.nextDouble();
+                }while(notaEstudiante <= 0 && notaEstudiante >=10);
+                notas[i][j] = notaEstudiante;
+            }
+        }
+        // NOTA MEDIA
+        double suma = 0;
+        for (int i = 0; i < notas.length; i++) {
+
+            for (int j = 0; j < notas[i].length; j++) {
+                suma += notas[i][j];
+            }
+        }
+        System.out.printf("La nota media de la clase es: %.1f%n", suma/(notas.length*notas[0].length));
+
+        // NOTA MAS ALTA Y MAS BAJA
+        double mayor = notas[0][0];
+        double menor = notas[0][0];
+        for (int i = 0; i < notas.length; i++) {
+            for (int j = 0; j < notas[i].length; j++) {
+                if (notas[i][j] > mayor){
+                    mayor = notas[i][j];
+                }
+                if (notas[i][j] < menor) {
+                    menor = notas[i][j];
+                }
+            }
+        }
+        System.out.printf("La nota mayor de la clase es: %.1f%n", mayor);
+        System.out.printf("La nota menor de la clase es: %.1f%n", menor);
+
+        // CUANTOS ALUMNOS HAN APROBADO Y CUANTOS HAN SUSPENDIDO
+        int aprobados;
+        int suspensos;
+
+    }
 }
