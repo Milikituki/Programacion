@@ -163,4 +163,35 @@ public class EjerciciosPDF {
 
 
     }
+    public void e4(){
+        String[] bombo1 = new String[5];
+        String[] bombo2 = new String[5];
+        String equipo;
+
+        for (int i = 0; i < bombo1.length; i++) {
+            System.out.print("Introduce el nombre de la selección: ");
+            equipo = scanner.next().toUpperCase();
+            bombo1[i] = equipo;
+        }
+        for (int i = 0; i < bombo2.length; i++) {
+            System.out.print("Introduce el nombre de la selección: ");
+            equipo = scanner.next().toUpperCase();
+            bombo2[i] = equipo;
+
+        }
+        boolean[] usados = new boolean[5];
+        int indice;
+        for (int i = 0; i < bombo1.length; i++) {
+            do {
+                indice = random.nextInt(5);
+            }while(usados[indice]);
+            System.out.printf("%s vs %s%n", bombo1[i], bombo2[indice]);
+            usados[indice] = true;
+        }
+
+
+
+
+
+    }
 }
