@@ -105,7 +105,7 @@ public class EjerciciosPDF {
     }
     public void e3(){
         // DECLARACION ARRAY CON CONDICION
-        double[][] notas = new double[2][2];
+        double[][] notas = new double[10][10];
         for (int i = 0; i < notas.length; i++) {
             for (int j = 0; j < notas[i].length; j++) {
                 double notaEstudiante;
@@ -143,8 +143,24 @@ public class EjerciciosPDF {
         System.out.printf("La nota menor de la clase es: %.1f%n", menor);
 
         // CUANTOS ALUMNOS HAN APROBADO Y CUANTOS HAN SUSPENDIDO
-        int aprobados;
-        int suspensos;
+        int aprobados = 0;
+        int suspensos = 0;
+        double promedioAlumno = 0;
+        for (int i = 0; i < notas.length; i++) {
+            double sumaAlumno = 0;
+            for (int j = 0; j < notas[i].length; j++) {
+                sumaAlumno += notas[i][j];
+            }
+            promedioAlumno = sumaAlumno/notas[0].length;
+            if (promedioAlumno >= 5) {
+                aprobados++;
+            } else {
+                suspensos++;
+            }
+        }
+        System.out.printf("El número de alumnos aprobados es: %d%n", aprobados);
+        System.out.printf("El número de alumnos suspensos es: %d%n", suspensos);
+
 
     }
 }
