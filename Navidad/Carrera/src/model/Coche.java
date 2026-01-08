@@ -11,7 +11,8 @@ public class Coche {
         this.puntos = 0;
     }
     public void acelerar(){
-        km+=(int)(Math.random()*31)+20;
+        int recorrido = (int)(Math.random()*31)+20;
+        this.km += recorrido;
     }
 
     public void sumaPuntos(int punto){

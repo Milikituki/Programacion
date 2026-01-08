@@ -1,5 +1,7 @@
 package model;
 
+import controller.CarreraController;
+
 public class Carrera {
     private Coche[] coches;
     private int distanciaCarrera;
@@ -7,20 +9,22 @@ public class Carrera {
         this.coches = coches;
         this.distanciaCarrera = distanciaCarrera;
     }
+    Coche coche = null;
     public void correr(){
         boolean fin = false;
-        int ganador = -1;
-
-        while(!fin){
+        for (int i = 0; i < coches.length; i++) {
+            coche.setKm(0);
+        }
+        while (!fin){
             for (int i = 0; i < coches.length; i++) {
                 coches[i].acelerar();
-                if (coches[i].getKm() >= distanciaCarrera && ganador == -1){
-                    coches[i].setKm(distanciaCarrera);
-                    ganador = i;
+                if (coches[i].getKm() >= distanciaCarrera){
                     fin = true;
                 }
             }
         }
+        CarreraController carreraController = new CarreraController(this);
+        carreraController.ordenarKm(coches);
     }
     public Coche[] getCoches() {
         return coches;

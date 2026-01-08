@@ -16,7 +16,7 @@ public class CarreraController {
         puntuar(carrera.getCoches());
         return carrera.getCoches();
     }
-    private void ordenarKm(Coche[] coches){
+    public void ordenarKm(Coche[] coches){
         for (int i = 0; i < coches.length; i++) {
             for (int j = 0; j < coches.length; j++) {
                 if (coches[j].getKm() > coches[i].getKm() || (coches[i].getKm() == coches[j].getKm() && coches[i].getPuntos() < coches[j].getPuntos())) {
@@ -32,10 +32,10 @@ public class CarreraController {
             coches[0].sumaPuntos(10);
         }
         if (coches.length > 1){
-            coches[0].sumaPuntos(8);
+            coches[1].sumaPuntos(8);
         }
         if (coches.length > 2){
-            coches[0].sumaPuntos(6);
+            coches[2].sumaPuntos(6);
         }
 
     }
