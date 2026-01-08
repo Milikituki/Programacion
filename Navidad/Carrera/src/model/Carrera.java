@@ -14,7 +14,7 @@ public class Carrera {
         while(!fin){
             for (int i = 0; i < coches.length; i++) {
                 coches[i].acelerar();
-                if (coches[i].getKm() >= distanciaCarrera){
+                if (coches[i].getKm() >= distanciaCarrera && ganador == -1){
                     coches[i].setKm(distanciaCarrera);
                     ganador = i;
                     fin = true;
