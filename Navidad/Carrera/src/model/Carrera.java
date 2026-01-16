@@ -25,6 +25,7 @@ public class Carrera {
         }
         CarreraController carreraController = new CarreraController(this);
         carreraController.ordenarKm(coches);
+        carreraController.puntuar(coches);
     }
     public Coche[] getCoches() {
         return coches;

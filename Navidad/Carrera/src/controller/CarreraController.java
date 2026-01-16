@@ -19,7 +19,7 @@ public class CarreraController {
     public void ordenarKm(Coche[] coches){
         for (int i = 0; i < coches.length; i++) {
             for (int j = 0; j < coches.length; j++) {
-                if (coches[j].getKm() > coches[i].getKm() || (coches[i].getKm() == coches[j].getKm() && coches[i].getPuntos() < coches[j].getPuntos())) {
+                if (coches[j].getKm() > coches[j+1].getKm()) {
                     Coche temporal = coches[i];
                     coches[i] = coches[j];
                     coches[j] = temporal;
